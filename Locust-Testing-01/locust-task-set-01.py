@@ -1,4 +1,4 @@
-from locust import TaskSet, task, constant
+from locust import TaskSet, task, constant, HttpUser
 
 class TaskSetTest(TaskSet):
     
@@ -11,3 +11,8 @@ class TaskSetTest(TaskSet):
     def get_response_02(self):
         self.client.get("/404")
         print("Successfully sent request-02")
+
+class LoadTestingWithTaskSet(HttpUser):
+    tasks = [TaskSetTest]
+    wait_time = constant(1)
+    host = "https://http.cat"
