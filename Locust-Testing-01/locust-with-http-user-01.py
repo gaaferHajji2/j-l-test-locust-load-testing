@@ -7,5 +7,5 @@ class TestHttpUser(HttpUser):
 
     @task
     def get_about_page(self):
-        self.client.get("/about")
-        print("Getting about success")
+        response = self.client.get("/")
+        print("The Response Is: ", response.status_code)
