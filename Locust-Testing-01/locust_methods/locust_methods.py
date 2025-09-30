@@ -1,4 +1,4 @@
-from locust import User, constant, task
+from locust import User, task
 
 class LocustMethods(User):
     def on_start(self):
