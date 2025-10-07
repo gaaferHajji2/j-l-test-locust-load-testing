@@ -1,4 +1,4 @@
-from locust import User, task, constant
+from locust import User, task, constant, tag
 
 class Locust01Test(User):
 
@@ -7,6 +7,7 @@ class Locust01Test(User):
     wait_time = constant(0.5)
 
     @task
+    @tag('simple-01', 'simple-02')
     def hello(self):
         print("Hello, Locust World!")
 
