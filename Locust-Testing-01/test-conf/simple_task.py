@@ -1,12 +1,13 @@
 from locust import task, HttpUser, constant, events
 import logging
+from logging import FileHandler
 
-logger = logging.getLogger()
+logger = logging.getLogger('jloka_test_events')
 logger.setLevel(logging.DEBUG)
 
 @events.spawning_complete.add_listener
-def spawn_users(count_users, **kwargs):
-    print(f"All users spawn successfully with count: {count_users}")
+def spawn_users(user_count, **kwargs):
+    logger.info(f"All users spawn successfully with count: {user_count}")
 
 def on_request_success(request_type, name, response_time, response_length, **kwargs):
     if kwargs.get("exception") is None:
