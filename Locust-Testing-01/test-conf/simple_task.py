@@ -1,6 +1,5 @@
 from locust import task, HttpUser, constant, events
 import logging
-from logging import FileHandler
 
 logger = logging.getLogger('jloka_test_events')
 logger.setLevel(logging.DEBUG)
