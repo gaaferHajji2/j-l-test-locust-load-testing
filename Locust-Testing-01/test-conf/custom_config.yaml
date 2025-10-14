@@ -1,0 +1,10 @@
+---
+
+# Runtime Settings
+host: https://example.edu
+users: 10
+spawn-rate: 5
+run-time: 10s
+headless: true
+only-summary: true
+html: loka.edu.html
