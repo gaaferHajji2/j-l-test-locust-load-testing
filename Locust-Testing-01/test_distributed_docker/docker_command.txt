@@ -1,0 +1,1 @@
+docker run -p 8089:8089 -v ${PWD}:/mnt/locust -d locustio/locust:master -f /mnt/locust/simple_01.py --headless --only-summary --html /mnt/locust/report.html -r 5 -u 25 -t 10s
